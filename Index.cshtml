@@ -1,35 +1,18 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@using MyAspNetCoreApp.Web.Controllers
 
-    var alert = "bu bir uyarı mesajıdır";
+@{
+
+    ViewData["Title"] = "Index";
+
+
 }
 
-@section Css
+
+@model List<Product>;
+
+@foreach(var item in Model)
 {
-<style>
-    h1{
-        color:red;
-        background-color:blue;
-    }
-</style>
+<p>@item.Id - @item.Name </p>
 }
-@section Scripts
-{
-
-<script type="text/javascript">
-    alert("Sayfamıza hoş geldin.")
-    $(document).ready(funviton(){
-
-    console.log("Sayfamıza hoş geldin")
-    })
-
-</script>
-}
-
-<h1>Merhaba Dünya</h1>
-
-
-
-<partial name="_MenuPartialView"></partial>
-@await Html.PartialAsync("_MenuPartialView")
+<h1>Ornek Controller, Index sayfası</h1>
 
