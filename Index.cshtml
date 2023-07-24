@@ -1,37 +1,19 @@
-﻿@{
-
-    ViewData["Title"] = "Index";
+﻿
+@{ViewData["Title"] = "ExampleController Index sayfası";
+    Layout = "ExampleLayout";
 }
 
-@model List<Product>
-<h1>Ürünler</h1>
-<a asp-controller="products" asp-action="add">Ürün ekle</a>
-<table class="table">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>İsim</th>
-            <th>Fiyat</th>
-            <th>Stok</th>
-            <th>İşlem</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.Id</td>
-                <td>@item.Name</td>
-                <td>@item.Price</td>
-                <td>@item.Stock</td>
-                <td>
-                    <a asp-controller="products" asp-action="remove" asp-route-id="@item.Id">Sil</a>
-                    <a asp-controller="products" asp-action="update" asp-route-id="@item.Id">Güncelle</a>
-                </td>
-</tr>
-        }
-    </tbody>
+@section header
+{
 
+<p> Bu kodlar headerın hemen altına eklenecek</p>
+}
 
-</table>
+@section footer
 
+{
+
+<p>Bu kodlarfooterın hemen altına eklenecek</p>
+}
+
+<div>Bu sayfa Example Controller> Index sayfasıs</div>
