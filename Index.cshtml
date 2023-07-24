@@ -1,19 +1,35 @@
-﻿
-@{ViewData["Title"] = "ExampleController Index sayfası";
-    Layout = "ExampleLayout";
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+    var alert = "bu bir uyarı mesajıdır";
 }
 
-@section header
+@section Css
+{
+<style>
+    h1{
+        color:red;
+        background-color:blue;
+    }
+</style>
+}
+@section Scripts
 {
 
-<p> Bu kodlar headerın hemen altına eklenecek</p>
+<script type="text/javascript">
+    alert("Sayfamıza hoş geldin.")
+    $(document).ready(funviton(){
+
+    console.log("Sayfamıza hoş geldin")
+    })
+
+</script>
 }
 
-@section footer
+<h1>Merhaba Dünya</h1>
 
-{
 
-<p>Bu kodlarfooterın hemen altına eklenecek</p>
-}
 
-<div>Bu sayfa Example Controller> Index sayfasıs</div>
+<partial name="_MenuPartialView"></partial>
+@await Html.PartialAsync("_MenuPartialView")
+
